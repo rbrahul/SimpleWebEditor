@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Html Editor RB</title>
+	<link rel="stylesheet" href="css/rb-editor-style.css" type="text/css">
+	
+	
+	<style type="text/css" id="rb-editor-style">
+	</style>
+<script type="text/javascript" id="rb-editor-script"></script>
+
+</head>
+<body>
+	<div id="rb-editor-head">
+	<div class="rb-editor-logo-area">
+	 <h2 class="rb-editor-title">HTML Editor RB</h2>
+	</div>
+	<!-- rb-editor-logo-area -->
+	<div class="rb-navigation-area">
+	<ul class="rb-editor-main-nav">
+	<li><a href="#" class="rb-editor-code-update" data-rbitem="" style="display:none;">Update</a></li>
+	<li><a href="#" class="rb-editor-code-run">Run</a></li>
+	<li><a href="" class="rb-editor-code-refresh">Refresh</a></li>
+	<li><a href="#" class="rb-editor-group-navigation-btn">More</a>
+	<div class="rb-editor-group-navigation" style="display:;">
+		<ul>
+			<li><a href="#" class="rb-editor-menu rb-editor-all-snipset">All Project <span id="snipset-total" class="rb-badge-warning rb-right">0</span></a></li>
+			<li><a href="#" class="rb-editor-menu rb-editor-save-snipset">Save Project</a></li>
+			<li><a href="#" class="rb-editor-menu rb-editor-setting">Setting</a></li>
+		</ul>
+	</div>
+	<!-- rb-editor-group-navigation -->
+	</li>
+	</ul>
+	</div>
+	<div style="clear:both;"></div>
+	</div>
+	<!-- .rb-editor-head -->
+	<div class="rb-editor-container">
+		<div id="rb-editor-code-area">
+			<div id="rb-editor-html-area">
+				<div class="rb-language-title">
+					HTML 
+				</div>
+				<textarea class="rb-editor-code-pan" style="height:350px;" placeholder="HTML" id="rb-editor-html-field"></textarea>
+			</div>
+			<!-- rb-editor-html-area -->
+			<div id="rb-editor-css-script-area">
+			<div class="rb-language-title rb-show-css-pan active">
+					CSS 
+				</div>
+				<textarea class="rb-editor-code-pan" id="rb-css-pan" placeholder="CSS" ></textarea>
+			<div class="rb-language-title rb-show-js-pan ">
+					Javascript 
+			</div>
+			<textarea class="rb-editor-code-pan" id="rb-js-pan" placeholder="Javascript" style="display:none;" id="rb-editor-js-field"></textarea>
+				
+			</div>
+			<!-- rb-editor-css-script-area -->
+
+		</div>
+		<!-- #rb-editor-code-area -->
+		<div id="rb-editor-output-area">
+			<h2 align="center" class="rb-out-put-heading">This is out put area</h2>
+
+		</div>
+		<!-- rb-editor-output-area -->
+
+	</div>
+	<!-- #rb-editor-container -->
+
+<!-- /////////////////////// MODAL SECTION////////////////////////////// -->
+<div class="rb-editor-modal-holder" id="save-snipet-modal">
+<div class="rb-editor-modal">
+<div class="rb-modal-head">
+<h3>Save Project</h3>
+</div>
+<!-- .rb-modal-head -->
+<div class="rb-modal-body">
+	<div class="rb-editor-input-group">
+	<label class="rb-editor-label rb-col5">Project Name</label>
+	<input type="text" class="rb-editor-form-control rb-col7" id="rb-editor-project-name" placeholder="Project Name">
+	<p class="rb-error-msg">Enter Valid Project Name</p>
+	</div>
+	<!-- .rb-editor-input-group -->
+	<div class="rb-clear"></div>
+</div>
+<!-- .rb-modal-body -->
+<div class="rb-modal-footer">
+<div class="rb-btn-group" style="float:right">
+	<button class="rb-btn-default" id="save-snippet-btn">Save</button>
+	<button class="rb-btn-default rb-modal-closer">Cancel</button>
+</div>
+<!-- rb-button-group -->
+</div>
+<!-- .modal-footer -->
+
+</div>
+<!-- .rb-editor-modal -->
+</div>
+<!-- .rb-editor-modal-holder -->
+
+<!-- ////////////////////////////project list modal ////////////////////////////////// -->
+<!-- /////////////////////// MODAL SECTION////////////////////////////// -->
+<div class="rb-editor-modal-holder" id="rb-project-snipet-modal" style="display:none;">
+<div class="rb-editor-modal">
+<div class="rb-modal-head">
+<h3>Your Projects</h3>
+</div>
+<!-- .rb-modal-head -->
+<div class="rb-modal-body" style="padding: 0px;max-height:400px;overflow-y:scroll;" id="rb-project-list">
+	<!-- <div class="rb-project-item rb-col-12">
+		<div class=" rb-col8 rb-project-description">
+		<p class="rb-project-title">Studetn Age Calculation</p>
+		<span class="rb-project-date">10th July, 2015</span>
+		</div>
+		rb-project-description
+		<div class=" rb-col4 rb-project-action-area">
+			<div class="rb-right">
+			<a class="rb-sm-btn rb-edit-project">Edit</a>
+			<a class="rb-sm-btn rb-edit-project">Delete</a>
+			</div>
+		</div>
+		rb-project-action-area
+		<div class="rb-clear"></div>
+	</div>
+	rb-project-item -->
+
+	
+
+	
+</div>
+<!-- .rb-modal-body -->
+<div class="rb-modal-footer">
+<div class="rb-btn-group" style="float:right">
+
+	<button class="rb-btn-default rb-modal-closer">Cancel</button>
+</div>
+<!-- rb-button-group -->
+</div>
+<!-- .modal-footer -->
+
+</div>
+<!-- .rb-editor-modal -->
+</div>
+<!-- .rb-editor-modal-holder -->
+<!-- ////////////////////////////SETTING modal  modal ////////////////////////////////// -->
+<!-- /////////////////////// MODAL SECTION////////////////////////////// -->
+<div class="rb-editor-modal-holder" id="rb-setting-modal" style="display:none;">
+<div class="rb-editor-modal">
+<div class="rb-modal-head">
+<h3>Setting</h3>
+</div>
+<!-- .rb-modal-head -->
+<div class="rb-modal-body" style="padding: 0px;" id="rb-project-list">
+
+	<div class="rb-tab-container">
+		<div class="rb-tab-head-area">
+			<ul class="rb-tab-menu">
+				<li><a href="#" data-panid="#export"  class="rb-tab-menu-item active">Export Projects</a></li>
+				<li><a href="#" data-panid="#import" class="rb-tab-menu-item">Import Projects</a></li>
+			</ul>
+		</div>
+		<!-- ////////////rb-tab-head-area /////////////-->
+		<div class="rb-tab-pan-container">
+				<div class="rb-tab-pan active" id="export">
+					<h3 id="export-container">Export all porjects </h3>
+					
+				</div>
+			<!--////////////// rb-tab-pan/////////////// -->
+			<div class="rb-tab-pan" id="import" >
+					<h3>Choose your file <input type="file" id="rb-editor-import-file" access="text/plain"></h3>
+					<button class="rb-btn-success"  id="rb-editor-import-btn">Import</button>
+				</div>
+			<!--////////////// rb-tab-pan/////////////// -->
+		</div>
+		<!-- rb-tab-pan-container -->
+	</div>
+	<!-- ///////rb-tab-container////// -->
+</div>
+<!-- .rb-modal-body -->
+<div class="rb-modal-footer">
+<div class="rb-btn-group" style="float:right">
+
+	<button class="rb-btn-default rb-modal-closer">Cancel</button>
+</div>
+<!-- rb-button-group -->
+</div>
+<!-- .modal-footer -->
+
+</div>
+<!-- .rb-editor-modal -->
+</div>
+<!-- .rb-editor-modal-holder -->
+<!-- ////////////////////////////SETTING modal  ENDS HERE ////////////////////////////////// -->
+
+<div id="rb-editor-alert">
+	<p class="rb-alert-title">Your Project Has been saved successfully</p>
+</div>
+
+
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/rb-editor-script.js"></script>
+	
+	
+</body>
+</html>

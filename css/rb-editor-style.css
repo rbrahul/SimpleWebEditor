@@ -1,0 +1,516 @@
+
+body{background:#f8f8f8;
+	margin:0;padding:0;
+	font-family:sans-serif;
+}
+#rb-editor-head{
+	height: 50px;
+	padding:10px;
+	box-sizing:border-box;
+	background-color: #1F1F1F;
+	color:#fff;
+	vertical-align: middle;
+	}
+	#rb-editor-head h2.rb-editor-title{
+		margin: 0px;
+		margin-left: 20px;
+		color:#F79B09;
+		vertical-align: middle;
+	}
+
+	.rb-editor-container{
+		margin: 0px;
+		width: 100%;
+		box-sizing:border-box;
+		padding: 0px;
+		background-color: #1D1D1D;
+		display: block;
+		height: 410px;
+	}
+	#rb-editor-code-area{
+		width: 100%;
+		height: 100%;
+		color:#666;
+		box-sizing:border-box;
+		display: block;
+		float: left;
+	}
+	#rb-editor-output-area{
+		background: #f8f8f8;
+		width: 100%;
+		float: left;
+		display: block;
+		margin:0;
+		padding: 10px;
+		box-sizing:border-box;
+		min-height: 160px;
+		overflow-y:scroll; 
+	}
+	#rb-editor-html-area{
+						width:50%;
+						float:left;
+						box-sizing:border-box;
+						float: left;
+						border-right: 1px solid #666;
+					}
+	#rb-editor-css-script-area{
+						width:50%;
+						float:left;
+						box-sizing:border-box;
+						float: left;
+					}
+	.rb-language-title{
+		padding:15px 10px;
+		font-size: 18px;
+		color:#666;
+		border-bottom:2px solid #000; 
+		background-color: #111;
+		cursor:pointer;
+
+	}
+	.rb-language-title:hover{
+		background-color: #010B19;
+	}
+		.rb-language-title.active{
+		border-bottom: 2px solid #0cf;
+		color:#0cf;
+	}
+	.rb-editor-code-pan{
+		width: 100%;
+		height: 295px;
+		background:#000;
+		border: none;
+		color:#fff;
+		box-sizing:border-box;
+		padding: 10px;
+	}
+	.rb-editor-code-pan::placeholder{
+		color:#333;
+	}
+	.rb-editor-logo-area{
+		width:300px;
+		float:left;
+	}
+	.rb-navigation-area{
+		width:500px;
+		float: right;
+	}
+	ul.rb-editor-main-nav{
+		margin:0;
+		padding: 0;
+		list-style: none;
+		float: right;
+	}
+	ul.rb-editor-main-nav li{
+		margin:0;
+		display: inline-block;
+		position: relative;
+		margin-right: 20px;
+	}
+
+	ul.rb-editor-main-nav li>a{
+		width:auto;
+		text-align: center;
+		display: block;
+		text-decoration: none;
+		color:#000;
+	}
+	.rb-editor-group-navigation{
+		display: none;
+	}
+	.rb-editor-code-run{
+		border-radius: 6px;
+		background-color: #0DA01B;
+		color:#fff !important;
+		font-size:14px;
+		padding:6px 15px;
+		border: 2px solid #000;
+	}
+	.rb-editor-code-refresh,.rb-editor-code-update{
+		border-radius: 6px;
+		background-color: #DB8C04;
+		color:#fff !important;
+		font-size:14px;
+		padding:6px 15px;
+		border: 2px solid #000;
+	}
+	.rb-editor-group-navigation-btn{
+		border-radius: 6px;
+		background-color: #0cf;
+		color:#fff !important;
+		font-size:14px;
+		padding:6px 15px;
+		border: 2px solid #000;
+	}
+	.rb-editor-group-navigation{
+		position: absolute;
+		box-shadow: 0px 2px 2px 2px #000;
+		display: none;
+		background-color: #111;
+		border-radius: 3px;
+		top:50px;right:0px;
+		/*padding:10px;*/
+	}
+	.rb-editor-group-navigation ul{
+		margin:0;
+		padding: 0;
+		list-style: none;
+	}
+	.rb-editor-group-navigation ul li{
+		margin:0;
+		padding: 0;
+	}
+	.rb-editor-group-navigation ul li a{
+		padding:8px 15px;
+		color:#999;
+		width:120px;
+		text-align: left;
+		border-bottom:1px solid #000; 
+		font-size: 14px;
+	}
+	.rb-editor-group-navigation ul li:last-child a{
+		border: none;
+	}
+	.rb-editor-group-navigation ul li a:hover{
+		background-color: #444;
+		color:#000;
+	}
+	h2.rb-out-put-heading{
+		color:#666 !important;
+	}
+	.rb-editor-modal-holder{
+		/*background-color: rgba(0,0,0,1);*/
+		background-color: #131313;
+		width: 100%;
+		margin: 0;
+		padding: 0;
+		position:absolute;
+		top:0;
+		display: block;
+		/*min-height: 500px;*/
+	}
+	.rb-editor-modal{
+		width:350px;
+		
+		background-color: #000;
+		border:1px solid #101010;
+		box-shadow: 0px 0px 5px 0px #000;
+		position: absolute;
+		opacity: 1;
+		left:50%;
+		display: block;
+		color:#666;
+	}
+	
+	.rb-modal-head{
+		border-bottom: 1px solid #101010;
+		padding: 10px;
+
+	}
+	.rb-modal-head h3{
+		margin:0px;
+		line-height: 1.7;
+	}
+	.rb-modal-body{
+		padding: 10px;
+		height: auto;
+		width: 100%;
+		-webkit-box-sizing:border-box;
+		-moz-box-sizing:border-box;
+		box-sizing:border-box;
+	}
+	.rb-modal-footer{
+		padding: 10px;
+		border-top: 1px solid #101010;
+
+	}
+	.rb-btn-default{
+		border:1px solid #000;
+		color:#000;
+		background-color: #333;
+		border-radius: 3px;
+		text-align: center;
+		padding: 5px 10px; 
+		margin-right: 10px;
+	}
+	.rb-btn-default:hover{
+		border:1px solid #666;
+		background-color: #000;
+		color:#666;
+
+	}
+	.rb-right{
+		float: right;
+	}
+	.rb-btn-group{
+	width: auto;
+	padding: 0;
+	margin: 0;
+	
+	margin-bottom: 10px;
+	}
+	.rb-editor-modal-holder{
+		display: none;
+	}
+	.rb-editor-input-group{
+		width: 100%;
+		margin-bottom: 10px;
+		clear:both;
+		height: auto;
+		/* min-height: 70px; */
+	}
+	
+	.rb-editor-label{
+		display: inline-block;
+	}
+	.rb-editor-form-control{
+		width: 100%;
+		padding: 6px 10px !important;
+		background-color: #000;
+		color:#fff;
+		font-size: 13px;
+		border: 1px solid #111;
+	}
+	.rb-editor-form-control:placeholder{
+		color:#111;
+	}
+	.rb-col12{
+		width: 100%;
+		padding: 0;
+		margin: 0;
+		float: left;
+		-webkit-box-sizing:border-box;
+		-moz-box-sizing:border-box;
+		box-sizing:border-box;
+	}	
+	.rb-col11{
+		width: 91.665%;
+		padding: 0;
+		margin: 0;
+		float: left;
+		-webkit-box-sizing:border-box;
+		-moz-box-sizing:border-box;
+		box-sizing:border-box;
+	}
+	.rb-col10{
+		width: 83.332%;
+		padding: 0;
+		margin: 0;
+		float: left;
+		-webkit-box-sizing:border-box;
+		-moz-box-sizing:border-box;
+		box-sizing:border-box;
+	}
+	.rb-col9{
+		width: 75%;
+		padding: 0;
+		margin: 0;
+		float: left;
+		-webkit-box-sizing:border-box;
+		-moz-box-sizing:border-box;
+		box-sizing:border-box;
+	}
+	.rb-col8{
+		width: 66.6665%;
+		padding: 0;
+		margin: 0;
+		float: left;
+		-webkit-box-sizing:border-box;
+		-moz-box-sizing:border-box;
+		box-sizing:border-box;
+	}
+	.rb-col7{
+		width: 58.3332%;
+		padding: 0;
+		margin: 0;
+		float: left;
+		-webkit-box-sizing:border-box;
+		-moz-box-sizing:border-box;
+		box-sizing:border-box;
+	}
+	.rb-col6{
+		padding: 0;
+		margin: 0;
+		width: 50%;
+		float: left;
+		-webkit-box-sizing:border-box;
+		-moz-box-sizing:border-box;
+		box-sizing:border-box;
+	}
+	.rb-col5{
+		width: 41.6665%;
+		padding: 0;
+		margin: 0;
+		float: left;
+		-webkit-box-sizing:border-box;
+		-moz-box-sizing:border-box;
+		box-sizing:border-box;
+	}
+	.rb-col4{
+		width: 33.3332%;
+		padding: 0;
+		margin: 0;
+		float: left;
+		-webkit-box-sizing:border-box;
+		-moz-box-sizing:border-box;
+		box-sizing:border-box;
+	}
+	.rb-col3{
+		padding: 0;
+		margin: 0;
+		width: 25%;
+		float: left;
+		-webkit-box-sizing:border-box;
+		-moz-box-sizing:border-box;
+		box-sizing:border-box;
+	}
+	.rb-col2{
+		width: 16.6665%;
+		padding: 0;
+		margin: 0;
+		float: left;
+		-webkit-box-sizing:border-box;
+		-moz-box-sizing:border-box;
+		box-sizing:border-box;
+	}
+	.rb-col1{
+		width: 8.3332%;
+		padding: 0;
+		margin: 0;
+		float: left;
+		-webkit-box-sizing:border-box;
+		-moz-box-sizing:border-box;
+		box-sizing:border-box;	
+	}
+	.rb-clear{
+		clear:both;
+	}
+	.rb-editor-label{
+		font-size: 13px;
+		vertical-align: middle;
+	}
+	p.rb-error-msg{
+		font-size: 12px;
+		margin: 10px;
+		color:#0cf;
+		float: right;
+		display: none;
+	}
+	.rb-project-item{
+		border-bottom:1px solid #101010;
+		padding: 10px;
+	}
+	.rb-project-item:last-child{
+		border: none;
+	}
+	.rb-project-item:hover{
+		border-bottom:1px solid 1px #333;
+		background-color: #010D16;
+
+	}
+	.rb-project-description{
+		cursor:pointer;
+	}
+	.rb-project-item p.rb-project-title{
+		font-size:16px;
+		margin: 0px;
+		color:#666;
+	}
+	.rb-project-date{
+		font-size: 12px;
+		color:#444;
+	}
+	.rb-project-action-area{
+		padding-top:10px; 
+	}
+	a.rb-sm-btn{
+		border:1px solid #000;
+		color:#000;
+		background-color: #333;
+		border-radius: 3px;
+		padding: 4px 5px;
+		font-size: 11px;
+		text-decoration: none;
+		cursor:pointer;
+	}
+	a.rb-sm-btn:hover{
+		border:1px solid #666;
+		background-color: #000;
+		color:#666;
+
+	}
+	#rb-editor-alert{
+		background-color: #045706;
+		padding: 10px;
+		width: 300px;
+		color:#fff;
+		border: 1px solid #47FA4F;
+		position: absolute;
+		top:50px;
+		display: none;
+	}
+	#rb-editor-alert .rb-alert-title{
+		font-size: 15px;
+	}
+	.rb-badge-warning{
+		padding: 3px 6px;
+		border-radius: 8px;
+		border:1px solid #000;
+		color:#fff;
+		font-size:12px;
+		background-color: #DB8C04;
+	}
+	.rb-tab-container{
+		width:100%;
+		margin:0;
+		padding: 0;
+	}
+	.rb-tab-head-area{
+		padding: 0px;
+		margin: 0px;
+		border-bottom: 1px solid #101010;
+	}
+	.rb-tab-head-area ul.rb-tab-menu{
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	.rb-tab-head-area ul.rb-tab-menu li{
+		display: inline-block;
+		margin: 0;
+	}
+	.rb-tab-head-area ul.rb-tab-menu a{
+		padding:10px 15px;
+		text-align: center;
+		font-size: 14px;
+		color:#ccc;
+		text-decoration: none;
+		border-bottom: 2px solid #333;
+		display: block;;
+	}
+	.rb-tab-head-area ul.rb-tab-menu a.active,.rb-tab-head-area ul.rb-tab-menu a:hover{
+		border-bottom: 2px solid #0cf;
+		color:#0cf;
+	}
+	.rb-tab-pan-container{
+		padding:10px;
+		box-sizing:border-box;
+		}
+	.rb-tab-pan{
+		display: none;
+	}
+	.rb-tab-pan.active{
+		display: block;
+	}
+	.rb-btn-success{
+		background-color: #30A00D;
+		color:#fff;
+		text-align: center;
+		padding: 10px 20px;
+		border: 1px solid #1D6F03;
+		border-radius: 4px;
+		vertical-align: middle;
+	}
+.rb-btn-success:hover{
+	background-color: #1D6F03;
+}
