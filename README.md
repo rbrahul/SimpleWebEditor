@@ -1,5 +1,5 @@
 # SimpleWebEditor
-A simple html,css and javascript editor to write and test html,css and javascript in realtime.
+A simple html,css and javascript editor to write and test html,css and javascript in realtime. It uses HTML5 LocalStorage to save snippets. And has the ability to export and import these snippet as JSON format.
 #Basic Featuers
 ```
 1. Write and Test HTML
